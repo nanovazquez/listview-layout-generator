@@ -1,7 +1,7 @@
 ListViewLayoutGenerator
 =======================
 
-This is a sample application created in Windows Library for Javascript (WinJS) where you can design any layout for a WinJS.ListView.
+This is a Metro style application created using the Windows Library for Javascript (WinJS) where you can design any layout for a WinJS.UI.ListView.
 
 Currently it supports the following features:
  * You can enable **multi-sized** items
