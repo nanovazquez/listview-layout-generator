@@ -1,0 +1,78 @@
+﻿(function () {
+    "use strict";
+
+    var ui = WinJS.UI;
+
+    var listViewSettingsPageControl = ui.Pages.define("/pages/listViewSettings/listViewSettings.html", {
+
+        // This function is called whenever a user navigates to this page. It
+        // populates the page elements with the app's data.
+        ready: function (element, options) {
+
+            // display the listViewSettings button in the appbar
+            document.querySelector('#appbar').winControl.showOnlyCommands(['listViewSettings'], true);
+
+            // configure the 'add styles' list view
+            var listView = document.querySelector('#stylesList').winControl;
+            listView.itemDataSource = ItemStylesRepository.dataSource;
+            listView.itemTemplate = this.stylesListItemRenderer;
+            listView.layout = new WinJS.UI.ListLayout({ 'horizontal': false });
+
+            // handle events
+            element.querySelector('#addItem').addEventListener('click', insertItem);
+            
+        },
+        stylesListItemRenderer: function (itemPromise) {
+
+            return itemPromise.then(function (item) {
+
+                // create a container for the item
+                var itemContainer = document.createElement('div');
+
+                // bind the template to the item and render it in the container
+                var itemTemplate = document.querySelector('#itemStyleTemplate').winControl;
+                itemTemplate.render(item.data, itemContainer);
+
+                // attach the 'deleteItem' event properly
+                itemContainer.querySelector('#deleteStyle').addEventListener('click', item.data.deleteItem);
+
+                return { element: itemContainer };
+            });
+        }
+    });
+
+    // ListViewSettings
+
+    function updateSettingsValues() {
+        var listView = document.querySelector('.groupeditemslist').winControl;
+
+        // fill the fields with the current listView settings
+        var cellWidthElement = document.querySelector('#editListViewFlyout .cell-width-container .value');
+        var cellHeightElement = document.querySelector('#editListViewFlyout .cell-height-container .value');
+        var enableCellSpanningElement = document.querySelector('#editListViewFlyout #enableMultipleSizeLayout');
+        var maxRowsElement = document.querySelector('#editListViewFlyout .max-rows-container .value')
+
+        cellWidthElement.value = (listView.layout.groupInfo) ? listView.layout.groupInfo.cellWidth : listView.layout._itemWidth;
+        cellHeightElement.value = (listView.layout.groupInfo) ? listView.layout.groupInfo.cellHeight : listView.layout._itemHeight;
+        enableCellSpanningElement.winControl.checked = (listView.layout.groupInfo) ? listView.layout.groupInfo.enableCellSpanning : cellWidthElement.value != cellHeightElement.value;
+        maxRowsElement.value = (listView.layout.maxRows) ? listView.layout.maxRows : '';
+    }
+
+    // Add Styles
+
+    function insertItem() {
+
+        // collect the data to insert
+        var itemClass = document.querySelector('input.item-class').value;
+        var itemWidth = parseFloat(document.querySelector('input.item-width').value);
+        var itemHeight = parseFloat(document.querySelector('input.item-height').value);
+
+        // insert the item in the list
+        var itemToAdd = { itemClass: itemClass, itemWidth: itemWidth, itemHeight: itemHeight };
+        ItemStylesRepository.addItem(itemToAdd);
+    }
+
+    WinJS.Namespace.define("ListViewSettings", {
+        updateValues: updateSettingsValues
+    });
+})();

@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ListView sample</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0.RC/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0.RC/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0.RC/js/ui.js"></script>
+
+    <!-- ListView Sample references -->
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="/js/data.js"></script>
+    <script src="/js/navigator.js"></script>
+    <script src="/js/default.js"></script>
+
+    <!-- ListViewSettings -->
+    <script src="/js/itemStyles.js"></script>
+    <script src="/pages/listViewSettings/listViewSettings.js"></script>
+    <link href="/pages/listViewSettings/listViewSettings.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- The content that will be loaded and displayed.
+-->
+    <div id="contenthost" data-win-control="Application.PageControlNavigator" data-win-options="{home: '/pages/groupedItems/groupedItems.html'}"></div>
+    <div id="appbar" data-win-control="WinJS.UI.AppBar">
+        <button id="listViewSettings" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{type:'flyout', label:'Edit ListView', icon:'edit', section:'selection', tooltip:'Click to edit the listView', flyout: editListViewFlyout}"></button>
+    </div>
+    <div id="editListViewFlyout" data-win-control="WinJS.UI.Flyout">
+        <div class="flyoutContent" data-win-control="WinJS.UI.HtmlControl" data-win-options="{uri: '/pages/listViewSettings/listViewSettings.html'}"></div>
+    </div>
+</body>
+</html>

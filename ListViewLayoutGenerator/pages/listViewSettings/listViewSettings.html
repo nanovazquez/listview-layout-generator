@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>ListViewSettings</title>
+    <script src="/js/itemStyles.js"></script>
+    <script src="/pages/listViewSettings/listViewSettings.js"></script>
+    <link href="/pages/listViewSettings/listViewSettings.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- These templates are used to display each item in the ListView declared below. -->
+    <div id="itemStyleTemplate" data-win-control="WinJS.Binding.Template">
+        <div class="item-class" data-win-bind="innerText: itemClass"></div>
+        <div class="item-width" data-win-bind="innerText: itemWidth"></div>
+        <div class="item-height" data-win-bind="innerText: itemHeight"></div>
+        <div class="delete-item">
+            <a id="deleteStyle" data-win-bind="onclick: deleteItem" style="font-family: 'Segoe UI Symbol'">&#57568;</a>
+        </div>
+    </div>
+
+    <!-- The content that will be loaded and displayed. -->
+    <div id="listview-options">
+        <fieldset class="listview-settings">
+            <legend>ListView Settings</legend>
+            <div id="enableMultipleSizeLayout" class="enable-cell-spanning-container" data-win-control="WinJS.UI.ToggleSwitch"
+                data-win-options="{ title: 'Enable Cell spanning?', labelOff : 'No', labelOn: 'Yes', checked: false}">
+            </div>
+            <div class="row cell-width-container">
+                <div class="title">Cell Width:</div>
+                <input class="value" type="number" />
+            </div>
+            <div class="row cell-height-container">
+                <div class="title">Cell Height:</div>
+                <input class="value" type="number" />
+            </div>
+            <div class="row max-rows-container">
+                <div class="title">Max Rows:</div>
+                <input class="value" type="number" />
+            </div>
+        </fieldset>
+        <fieldset class="add-item-styles">
+            <legend>Add styles</legend>
+            <div class="add-item-style">
+                <div class="header item-class">Items</div>
+                <input class="item-class new-style-field" type="text" id="item-class" name="item-class" />
+                <div class="header item-width">Width</div>
+                <input class="item-width new-style-field" type="number" id="item-width" name="item-width" />
+                <div class="header item-height">Height</div>
+                <input class="item-height new-style-field" type="number" id="item-height" name="item-height" />
+                <div class="add-item">
+                    <a id="addItem" style="font-family: 'Segoe UI Symbol'">&#57609;</a>
+                </div>
+            </div>
+            <div id="stylesList" aria-label="List of styles" data-win-control="WinJS.UI.ListView"
+                data-win-options="{  selectionMode: 'none', tapBehavior: 'none' }">
+            </div>
+        </fieldset>
+        <div class="update-layout">
+            <button class="update-layout-button">Update Layout</button>
+        </div>
+    </div>
+</body>
+</html>

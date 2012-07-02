@@ -1,0 +1,157 @@
+﻿#listview-options {
+    display: -ms-grid;
+    -ms-grid-columns: 230px 325px;
+    -ms-grid-rows: auto 30px;
+    max-height: 500px;
+    max-width: 700px;
+}
+
+    /* fieldset and inputs (general) */
+
+    #listview-options fieldset {
+        padding: 10px;
+    }
+
+    #listview-options fieldset {
+        padding: 10px;
+    }
+
+        #listview-options fieldset legend {
+            margin: 0;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+    #listview-options input[type=number] {
+        text-align: right;
+    }
+
+    /* ListView settings container */
+
+    #listview-options .listview-settings {
+        -ms-grid-column: 1;
+        -ms-grid-row: 1;
+        height: calc(100% - 30px);
+    }
+
+    #listview-options .enable-cell-spanning-container {
+        padding-bottom: 10px;
+    }
+
+    #listview-options .listview-settings .row {
+        width: 200px;
+        height: auto;
+        display: -ms-grid;
+        -ms-grid-columns: 85px 100px;
+    }
+
+        #listview-options .listview-settings .row .title {
+            -ms-grid-column: 1;
+            -ms-grid-row-align: center;
+            max-height: 100%;
+            width: 100%;
+        }
+
+        #listview-options .listview-settings .row .value {
+            -ms-grid-column: 2;
+            -ms-grid-row-align: center;
+            max-height: 100%;
+            width: 100%;
+        }
+
+    /* Add Styles container */
+
+    #listview-options .add-item-styles {
+        -ms-grid-column: 2;
+        -ms-grid-row: 1;
+        height: calc(100% - 30px);
+    }
+
+    #listview-options .add-item-style {
+        display: -ms-grid;
+        -ms-grid-columns: 125px 65px 65px 25px;
+        -ms-grid-rows: auto 1fr;
+    }
+
+        #listview-options .add-item-style .header {
+            -ms-grid-row: 1;
+            width: calc(100% - 10px);
+            text-align: center;
+        }
+
+        #listview-options .add-item-style input {
+            -ms-grid-row: 2;
+            width: calc(100% - 10px);
+            min-width: 0px;
+        }
+
+        #listview-options .add-item-style .item-class {
+            -ms-grid-column: 1;
+        }
+
+        #listview-options .add-item-style .item-width {
+            -ms-grid-column: 2;
+        }
+
+        #listview-options .add-item-style .item-height {
+            -ms-grid-column: 3;
+        }
+
+        #listview-options .add-item-style .add-item {
+            -ms-grid-row: 2;
+            -ms-grid-column: 4;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+    /* stylesList */
+
+    #listview-options #stylesList {
+        -ms-grid-row: 2;
+        width: 300px;
+        height: 120px;
+    }
+
+        #listview-options #stylesList .win-item.win-hover {
+            background-color: transparent;
+        }
+
+        #listview-options #stylesList .win-item {
+            display: -ms-grid;
+            -ms-grid-columns: 115px 63px 65px 1fr;
+            width: 100%;
+        }
+
+            #listview-options #stylesList .win-item .item-class {
+                -ms-grid-column: 1;
+            }
+
+            #listview-options #stylesList .win-item .item-width {
+                -ms-grid-column: 2;
+                text-align: right;
+                margin: 0 10px 0 6px;
+            }
+
+            #listview-options #stylesList .win-item .item-height {
+                -ms-grid-column: 3;
+                text-align: right;
+                margin: 0 10px 0 7px;
+            }
+
+            #listview-options #stylesList .win-item .delete-item {
+                -ms-grid-column: 4;
+                margin: -7px 0 0 2px;
+                font-size: 16pt;
+            }
+
+    /* Update layout */
+
+    #listview-options .update-layout {
+        -ms-grid-row: 2;
+        -ms-grid-column-span: 2;
+        width: 100%;
+        text-align: right;
+        vertical-align: middle;
+        margin: 10px 20px 0 0;
+        height: 30px;
+    }
