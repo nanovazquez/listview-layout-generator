@@ -10,6 +10,8 @@ Currently it supports the following features:
 
 ## How to install
 
+For this to work you need to be in a Windows 8 environment (you can download the setup from [here](http://windows.microsoft.com/en-US/windows-8/download) and the .ISO from [here](http://windows.microsoft.com/en-US/windows-8/iso/))
+Also, you need to install Visual Studio 2012. Currently, the RC version can be downloaded from [here](http://www.microsoft.com/visualstudio/11/en-us).
 
 ## How to use
 
