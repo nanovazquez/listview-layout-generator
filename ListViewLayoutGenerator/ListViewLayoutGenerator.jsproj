@@ -57,7 +57,7 @@
     <Content Include="images\storelogo.png" />
     <Content Include="js\data.js" />
     <Content Include="js\default.js" />
-    <Content Include="js\itemStyles.js" />
+    <Content Include="js\itemStylesRepository.js" />
     <Content Include="js\navigator.js" />
     <Content Include="pages\groupedItems\groupedItems.css" />
     <Content Include="pages\groupedItems\groupedItems.html" />

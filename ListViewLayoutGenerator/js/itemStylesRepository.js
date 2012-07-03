@@ -5,6 +5,9 @@
     // { id , itemClass , itemWidth , itemHeight, deleteItem } 
     var items = new WinJS.Binding.List();
 
+    // we add an item just to demonstrate how to do it
+    items.push({ itemClass: 'Item0', itemWidth: 250, itemHeight: 250 });
+
     function addItem(itemToInsert) {
         var currentKey = items._currentKey;
         var newItem = {
@@ -28,7 +31,7 @@
         var itemToReturn = { itemWidth: '', itemHeight: '' };
 
         items.forEach(function (item, index) {
-            if (item.itemClass == 'item' + itemIndex) {
+            if (item.itemClass.toLowerCase() == 'item' + itemIndex) {
                 itemToReturn.width = item.itemWidth + 'px';
                 itemToReturn.height = item.itemHeight + 'px';
             }
