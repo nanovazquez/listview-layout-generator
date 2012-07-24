@@ -114,7 +114,7 @@
         groupedItemsPageControl.prototype.initializeLayout(listView, appView.value);
     }
 
-    // This function checks if the items were bound and, if that's the case, updates the lisView settings fields
+    // This function checks if the items were bound and, if that's the case, updates the listView settings fields
     function listViewStateChanged(e) {
 
         // dataBound

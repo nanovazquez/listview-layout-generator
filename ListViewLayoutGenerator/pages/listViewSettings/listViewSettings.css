@@ -144,14 +144,23 @@
                 font-size: 16pt;
             }
 
-    /* Update layout */
+    /* Tip and update-layout button */
+
+    #listview-options .tip {
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 2;
+        white-space: normal;
+        margin: 0 20px 0 10px;
+        color: #808080;
+        width: 400px;
+    }
 
     #listview-options .update-layout {
         -ms-grid-row: 2;
-        -ms-grid-column-span: 2;
-        width: 100%;
+        -ms-grid-column: 2;
         text-align: right;
         vertical-align: middle;
-        margin: 10px 20px 0 0;
+        margin: 10px 0 0 0;
         height: 30px;
     }

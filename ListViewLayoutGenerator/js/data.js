@@ -15,24 +15,24 @@
     // Each of these sample items should have a reference to a particular
     // group.
     var sampleItems = [
-        { group: sampleGroups[0], backgroundColor: '#ff6a00' },
-        { group: sampleGroups[0], backgroundColor: '#ff006e' },
-        { group: sampleGroups[0], backgroundColor: '#ffd800' },
-        { group: sampleGroups[0], backgroundColor: '#0094ff' },
-        { group: sampleGroups[0], backgroundColor: '#b200ff' },
+        { group: sampleGroups[0], backgroundColor: '#ff6a00', subtitle: '' },
+        { group: sampleGroups[0], backgroundColor: '#ff006e', subtitle: '' },
+        { group: sampleGroups[0], backgroundColor: '#ffd800', subtitle: '' },
+        { group: sampleGroups[0], backgroundColor: '#0094ff', subtitle: '' },
+        { group: sampleGroups[0], backgroundColor: '#b200ff', subtitle: '' },
 
-        { group: sampleGroups[1], backgroundColor: '#16db30' },
-        { group: sampleGroups[1], backgroundColor: '#f00' },
-        { group: sampleGroups[1], backgroundColor: '#c21d12' },
-        { group: sampleGroups[1], backgroundColor: '#0026ff' },
+        { group: sampleGroups[1], backgroundColor: '#16db30', subtitle: '' },
+        { group: sampleGroups[1], backgroundColor: '#f00', subtitle: '' },
+        { group: sampleGroups[1], backgroundColor: '#c21d12', subtitle: '' },
+        { group: sampleGroups[1], backgroundColor: '#0026ff', subtitle: '' },
 
-        { group: sampleGroups[2], backgroundColor: '#b2aac2' },
-        { group: sampleGroups[2], backgroundColor: '#4800ff' },
-        { group: sampleGroups[2], backgroundColor: '#12caff' },
-        { group: sampleGroups[2], backgroundColor: '#f4fe0d' },
-        { group: sampleGroups[2], backgroundColor: '#00ff21' },
-        { group: sampleGroups[2], backgroundColor: '#082941' },
-        { group: sampleGroups[2], backgroundColor: '#0094ff' }
+        { group: sampleGroups[2], backgroundColor: '#b2aac2', subtitle: '' },
+        { group: sampleGroups[2], backgroundColor: '#4800ff', subtitle: '' },
+        { group: sampleGroups[2], backgroundColor: '#12caff', subtitle: '' },
+        { group: sampleGroups[2], backgroundColor: '#f4fe0d', subtitle: '' },
+        { group: sampleGroups[2], backgroundColor: '#00ff21', subtitle: '' },
+        { group: sampleGroups[2], backgroundColor: '#082941', subtitle: '' },
+        { group: sampleGroups[2], backgroundColor: '#0094ff', subtitle: '' }
     ];
 
     // Get a reference for an item, using the group key and item title as a

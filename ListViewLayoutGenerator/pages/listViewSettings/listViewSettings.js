@@ -59,17 +59,22 @@
     }
 
     // Add Styles
-
     function insertItem() {
 
         // collect the data to insert
-        var itemClass = document.querySelector('input.item-class').value;
+        var itemsClass = document.querySelector('input.item-class').value;
         var itemWidth = parseFloat(document.querySelector('input.item-width').value);
         var itemHeight = parseFloat(document.querySelector('input.item-height').value);
 
-        // insert the item in the list
-        var itemToAdd = { itemClass: itemClass, itemWidth: itemWidth, itemHeight: itemHeight };
-        ItemStylesRepository.addItem(itemToAdd);
+        // get items separated by comma (just in case, replacy common separators with a comma)
+        var items = itemsClass.replace(/[,;|\-]/g, ",").split(',');
+
+        // insert items in the list
+        for (var i = 0; i < items.length; i++) {
+            var itemClass = items[i].trim();
+            var itemToAdd = { itemClass: itemClass, itemWidth: itemWidth, itemHeight: itemHeight };
+            ItemStylesRepository.addItem(itemToAdd);
+        }
     }
 
     WinJS.Namespace.define("ListViewSettings", {

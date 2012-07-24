@@ -36,17 +36,22 @@
             -ms-grid-row-span: 2;
         }
 
+            .groupeditemspage .groupeditemslist .win-item .item-image img {
+                width: 100%;
+                height: 100%;
+            }
+
         .groupeditemspage .groupeditemslist .win-item .item-overlay {
             -ms-grid-row: 2;
-            -ms-grid-rows: 1fr 21px;
+            -ms-grid-rows: auto 1fr;
             display: -ms-grid;
-            padding: 6px 15px 2px 15px;
+            padding: 2px 15px 2px 15px;
         }
 
             .groupeditemspage .groupeditemslist .win-item .item-overlay .item-title {
                 -ms-grid-row: 1;
                 overflow: hidden;
-                width: 220px;
+                width: 100%;
                 height: 30px;
                 font-size: 23px;
                 font-weight: 400;
@@ -54,7 +59,9 @@
 
             .groupeditemspage .groupeditemslist .win-item .item-overlay .item-subtitle {
                 -ms-grid-row: 2;
-                width: 220px;
+                width: 100%;
+                overflow: hidden;
+                font-size: 9pt;
             }
 
 @media screen and (-ms-view-state: fullscreen-landscape), screen and (-ms-view-state: fullscreen-portrait), screen and (-ms-view-state: filled) {
