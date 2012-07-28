@@ -7,9 +7,10 @@ Currently it supports the following features:
  * You can enable **multi-sized** items
  * You can modify the **maxRows** property of the listView
  * You can set **custom width & height** for an item / group of items
- * <span style="color: green; font-weight: bold; font-style:italic">New!</span> You can add several item styles at once (separated by a comma)
- * <span style="color: green; font-weight: bold; font-style:italic">New!</span> Using item no. and group.no, you can style a single item in the list
- * <span style="color: green; font-weight: bold; font-style:italic">New!</span> Use asterisk/star to add styles for **all** the items or groups 
+ * **New!** You can add several item styles at once (separated by a comma)
+ * **New!** Using item no. and group.no, you can style a single item in the list
+ * **New!** Use asterisk/star to add styles for **all** the items or groups
+ 
 ## How to install
 
 For this to work you need to be in a Windows 8 environment.
