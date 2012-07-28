@@ -41,8 +41,7 @@
         }
     });
 
-    // ListViewSettings
-
+    // ListViewSettings menu
     function updateSettingsValues() {
         var listView = document.querySelector('.groupeditemslist').winControl;
 
@@ -58,22 +57,37 @@
         maxRowsElement.value = (listView.layout.maxRows) ? listView.layout.maxRows : '';
     }
 
-    // Add Styles
+    // AddStyles menu
     function insertItem() {
 
         // collect the data to insert
         var itemsClass = document.querySelector('input.item-class').value;
+        var itemsGroups = document.querySelector('input.group-class').value;
         var itemWidth = parseFloat(document.querySelector('input.item-width').value);
         var itemHeight = parseFloat(document.querySelector('input.item-height').value);
 
+        // if width or height is NaN, return
+        if (isNaN(itemWidth) || isNaN(itemHeight)) return;
+
         // get items separated by comma (just in case, replacy common separators with a comma)
         var items = itemsClass.replace(/[,;|\-]/g, ",").split(',');
+        var groups = itemsGroups.replace(/[,;|\-]/g, ",").split(',');
 
         // insert items in the list
         for (var i = 0; i < items.length; i++) {
-            var itemClass = items[i].trim();
-            var itemToAdd = { itemClass: itemClass, itemWidth: itemWidth, itemHeight: itemHeight };
-            ItemStylesRepository.addItem(itemToAdd);
+            var itemClass = items[i].trim() || '*';
+
+            for (var j = 0; j < groups.length; j++) {
+                var itemGroup = groups[j].trim() || '*';
+                var itemToAdd = {
+                    itemClass: itemClass,
+                    itemGroup: itemGroup,
+                    itemWidth: itemWidth,
+                    itemHeight: itemHeight
+                };
+
+                ItemStylesRepository.addItem(itemToAdd);
+            }
         }
     }
 

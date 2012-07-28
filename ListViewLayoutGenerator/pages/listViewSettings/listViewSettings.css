@@ -1,6 +1,6 @@
 ﻿#listview-options {
     display: -ms-grid;
-    -ms-grid-columns: 230px 325px;
+    -ms-grid-columns: 230px 430px;
     -ms-grid-rows: auto 30px;
     max-height: 500px;
     max-width: 700px;
@@ -69,7 +69,7 @@
 
     #listview-options .add-item-style {
         display: -ms-grid;
-        -ms-grid-columns: 125px 65px 65px 25px;
+        -ms-grid-columns: 125px 125px 63px 65px 25px;
         -ms-grid-rows: auto 1fr;
     }
 
@@ -88,18 +88,22 @@
         #listview-options .add-item-style .item-class {
             -ms-grid-column: 1;
         }
-
-        #listview-options .add-item-style .item-width {
+        
+        #listview-options .add-item-style .group-class {
             -ms-grid-column: 2;
         }
 
-        #listview-options .add-item-style .item-height {
+        #listview-options .add-item-style .item-width {
             -ms-grid-column: 3;
+        }
+
+        #listview-options .add-item-style .item-height {
+            -ms-grid-column: 4;
         }
 
         #listview-options .add-item-style .add-item {
             -ms-grid-row: 2;
-            -ms-grid-column: 4;
+            -ms-grid-column: 5;
             text-align: center;
             margin-top: 10px;
         }
@@ -108,7 +112,7 @@
 
     #listview-options #stylesList {
         -ms-grid-row: 2;
-        width: 300px;
+        width: 420px;
         height: 120px;
     }
 
@@ -118,29 +122,34 @@
 
         #listview-options #stylesList .win-item {
             display: -ms-grid;
-            -ms-grid-columns: 115px 63px 65px 1fr;
+            -ms-grid-columns: 110px 140px 63px 45px 1fr;
             width: 100%;
         }
 
             #listview-options #stylesList .win-item .item-class {
                 -ms-grid-column: 1;
             }
+            
+            #listview-options #stylesList .win-item .group-class {
+                -ms-grid-column: 2;
+                margin: 0 15px 0 15px;
+            }
 
             #listview-options #stylesList .win-item .item-width {
-                -ms-grid-column: 2;
+                -ms-grid-column: 3;
                 text-align: right;
-                margin: 0 10px 0 6px;
+                margin: 0 15px 0 0px;
             }
 
             #listview-options #stylesList .win-item .item-height {
-                -ms-grid-column: 3;
+                -ms-grid-column: 4;
                 text-align: right;
-                margin: 0 10px 0 7px;
+                margin: 0;
             }
 
             #listview-options #stylesList .win-item .delete-item {
-                -ms-grid-column: 4;
-                margin: -7px 0 0 2px;
+                -ms-grid-column: 5;
+                margin: -7px 0 0 10px;
                 font-size: 16pt;
             }
 

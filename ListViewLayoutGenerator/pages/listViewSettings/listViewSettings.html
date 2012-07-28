@@ -10,6 +10,7 @@
     <!-- These templates are used to display each item in the ListView declared below. -->
     <div id="itemStyleTemplate" data-win-control="WinJS.Binding.Template">
         <div class="item-class" data-win-bind="innerText: itemClass"></div>
+        <div class="group-class" data-win-bind="innerText: itemGroup"></div>
         <div class="item-width" data-win-bind="innerText: itemWidth"></div>
         <div class="item-height" data-win-bind="innerText: itemHeight"></div>
         <div class="delete-item">
@@ -42,6 +43,8 @@
             <div class="add-item-style">
                 <div class="header item-class">Items</div>
                 <input class="item-class new-style-field" type="text" id="item-class" name="item-class" />
+                <div class="header group-class">Groups</div>
+                <input class="group-class new-style-field" type="text" id="group-class" name="group-class" />
                 <div class="header item-width">Width</div>
                 <input class="item-width new-style-field" type="number" id="item-width" name="item-width" />
                 <div class="header item-height">Height</div>
