@@ -31,6 +31,7 @@ Also, you need to install Visual Studio 2012.
 
 5. Press the **Update Layout** button to see your changes. 
 
+For more information, you can go to http://nanovazquez.com/metro/2012/07/03/playing-with-metro-style-apps-aka-listview-generator/
 
 Below is a sample of what you can achieve:
 
