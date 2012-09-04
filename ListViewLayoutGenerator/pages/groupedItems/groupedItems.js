@@ -15,6 +15,9 @@
         // populates the page elements with the app's data.
         ready: function (element, options) {
 
+            // hide 'Home' appbar command
+            document.querySelector('#appbar').winControl.hideCommands(['cmdHome'], true);
+
             var listView = element.querySelector('.groupeditemslist').winControl;
             listView.groupHeaderTemplate = element.querySelector('.headerTemplate');
             listView.itemTemplate = this.itemRenderer;
@@ -30,11 +33,8 @@
         initializeLayout: function (listView, viewState) {
             /// <param name="listView" value="WinJS.UI.ListView.prototype" />
 
-            if (viewState === appViewState.snapped) {
-                listView.itemDataSource = Data.groups.dataSource;
-                listView.groupDataSource = null;
-                listView.layout = new ui.ListLayout();
-            } else {
+            // the listView does not support snapped mode
+            if (viewState != appViewState.snapped) {
                 listView.itemDataSource = Data.items.dataSource;
                 listView.groupDataSource = Data.groups.dataSource;
                 listView.layout = new ui.GridLayout(gridLayoutOptions);

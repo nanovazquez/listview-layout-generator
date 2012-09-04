@@ -20,12 +20,12 @@
         <p class="group-title win-type-x-large" data-win-bind="textContent: title; groupKey: key"></p>
     </div>
     <div class="itemTemplate" data-win-control="WinJS.Binding.Template">
-        <div class="item-image">
-            <img data-win-bind="style.background: backgroundColor;" />
+        <div class="item-image" data-win-bind="style.background: backgroundColor;">
+            <img data-win-bind="src: imageUrl;" />
         </div>
         <div class="item-overlay">
             <div class="item-title" data-win-bind="innerText: title"></div>
-            <div class="item-subtitle" data-win-bind="innerText: subtitle"></div>
+            <div class="item-description" data-win-bind="innerText: description"></div>
         </div>
     </div>
 

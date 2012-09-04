@@ -9,9 +9,6 @@
         // populates the page elements with the app's data.
         ready: function (element, options) {
 
-            // display the listViewSettings button in the appbar
-            document.querySelector('#appbar').winControl.showOnlyCommands(['listViewSettings'], true);
-
             // configure the 'add styles' list view
             var listView = document.querySelector('#stylesList').winControl;
             listView.itemDataSource = ItemStylesRepository.dataSource;
