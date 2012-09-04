@@ -51,14 +51,33 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <Content Include="css\default.css" />
+    <Content Include="images\latestNews\news1.jpg" />
+    <Content Include="images\latestNews\news2.jpg" />
+    <Content Include="images\latestNews\news3.jpg" />
+    <Content Include="images\latestNews\news4.jpg" />
     <Content Include="images\logo.png" />
+    <Content Include="images\mostRead\mostRead1.jpg" />
+    <Content Include="images\mostRead\mostRead2.jpg" />
+    <Content Include="images\mostRead\mostRead3.jpg" />
+    <Content Include="images\mostRead\mostRead4.jpg" />
+    <Content Include="images\recentActivity\people1.jpg" />
+    <Content Include="images\recentActivity\people2.jpg" />
     <Content Include="images\smalllogo.png" />
     <Content Include="images\splashscreen.png" />
     <Content Include="images\storelogo.png" />
+    <Content Include="images\theWeek\theWeek6.jpg" />
+    <Content Include="images\theWeek\theWeek5.jpg" />
+    <Content Include="images\theWeek\theWeek3.jpg" />
+    <Content Include="images\theWeek\theWeek1.jpg" />
+    <Content Include="images\theWeek\theWeek4.jpg" />
+    <Content Include="images\theWeek\theWeek2.jpg" />
     <Content Include="js\data.js" />
     <Content Include="js\default.js" />
     <Content Include="js\itemStylesRepository.js" />
     <Content Include="js\navigator.js" />
+    <Content Include="pages\magazineLayout\magazineLayout.css" />
+    <Content Include="pages\magazineLayout\magazineLayout.html" />
+    <Content Include="pages\magazineLayout\magazineLayout.js" />
     <Content Include="pages\groupedItems\groupedItems.css" />
     <Content Include="pages\groupedItems\groupedItems.html" />
     <Content Include="pages\groupedItems\groupedItems.js" />

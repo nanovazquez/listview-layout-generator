@@ -20,7 +20,11 @@
 -->
     <div id="contenthost" data-win-control="Application.PageControlNavigator" data-win-options="{home: '/pages/groupedItems/groupedItems.html'}"></div>
     <div id="appbar" data-win-control="WinJS.UI.AppBar">
-        <button id="listViewSettings" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{type:'flyout', label:'Edit ListView', icon:'edit', section:'selection', tooltip:'Click to edit the listView', flyout: editListViewFlyout}"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{ id:'cmdHome', type:'button', label:'Go to home', icon:'home', section:'selection', tooltip:'Go to the home page'}"
+                onclick="WinJS.Navigation.navigate(Application.navigator.home)"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{ id:'cmdListViewSettings', type:'flyout', label:'Edit ListView', icon:'edit', section:'selection', tooltip:'Click to edit the listView', flyout: editListViewFlyout}"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{ id:'cmdSampleLayout', type:'button', label:'Go to sample page', icon:'previewlink', section:'selection', tooltip:'Click to go to a page with a magazine layout'}"
+                onclick="WinJS.Navigation.navigate('/pages/magazineLayout/magazineLayout.html')" ></button>
     </div>
     <div id="editListViewFlyout" data-win-control="WinJS.UI.Flyout">
         <div class="flyoutContent" data-win-control="WinJS.UI.HtmlControl" data-win-options="{uri: '/pages/listViewSettings/listViewSettings.html'}"></div>
