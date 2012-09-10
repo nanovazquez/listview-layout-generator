@@ -29,9 +29,30 @@
 
             var listView = element.querySelector('.groupeditemslist').winControl;
             listView.groupHeaderTemplate = element.querySelector('.headerTemplate');
-            listView.itemTemplate = element.querySelector('.itemTemplate');
+            listView.itemTemplate = this.itemRenderer;
             this.initializeLayout(listView, appView.value);
             listView.element.focus();
+        },
+
+        // This function renders the items in the listView
+        itemRenderer: function (itemPromise) {
+
+            return itemPromise.then(function (item) {
+
+                // creates an element to contain the item
+                var itemContainer = document.createElement('div');
+
+                // add the item group and the item index to the container className
+                var itemGroup = item.data.group.description.toLowerCase().replace(/ /g, '-');
+                var itemIndex = Data.getItemsFromGroup(item.data.group).indexOf(item.data);
+                itemContainer.className = itemGroup + ' item' + itemIndex;
+
+                // Render template in container
+                var itemTemplate = document.querySelector('.itemTemplate').winControl;
+                itemTemplate.render(item.data, itemContainer);
+
+                return { element: itemContainer };
+            });
         },
 
         // This function updates the ListView with new layouts

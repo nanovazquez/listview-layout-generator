@@ -46,7 +46,7 @@
         return itemToReturn;
     }
 
-    // we add a sample item just to demonstrate how to do it
+    // add a sample item just to demonstrate how to do it
     addItem({ itemClass: 'Item0', itemGroup: '*', itemWidth: 250, itemHeight: 250 });
 
     WinJS.Namespace.define("ItemStylesRepository", {

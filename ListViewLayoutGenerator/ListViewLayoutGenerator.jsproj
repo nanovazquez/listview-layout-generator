@@ -51,10 +51,6 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <Content Include="css\default.css" />
-    <Content Include="images\latestNews\news1.jpg" />
-    <Content Include="images\latestNews\news2.jpg" />
-    <Content Include="images\latestNews\news3.jpg" />
-    <Content Include="images\latestNews\news4.jpg" />
     <Content Include="images\logo.png" />
     <Content Include="images\mostRead\mostRead1.jpg" />
     <Content Include="images\mostRead\mostRead2.jpg" />

@@ -1,137 +1,252 @@
-﻿/* This selector is used to prevent ui-dark/light.css from overwriting changes
-   to .win-surface. */
-.magazineLayoutPage .groupeditemslist .win-horizontal.win-viewport .win-surface {
+﻿.magazineLayoutPage .groupeditemslist .win-horizontal.win-viewport .win-surface {
     margin-left: 45px;
     margin-bottom: 60px;
 }
 
 .magazineLayoutPage .groupeditemslist {
-    height: 100%;
-    position: relative;
     width: 100%;
-    z-index: 0;
+    height: 100%;
 }
 
+    /* Group Header */
+
     .magazineLayoutPage .groupeditemslist .win-groupheader {
-        margin-top: 5px;
-        margin-left: 70px;
+        margin: 0;
         padding: 0;
+        width: 75px;
+        overflow: visible;
+        transform: translateY(200px) rotate(270deg);
     }
 
         .magazineLayoutPage .groupeditemslist .win-groupheader .group-title {
-            margin-bottom: 10px;
-            margin-left: 5px;
-            margin-top: 0;
+            margin: 0;
+            padding: 0;
+            width: 250px;
+            height: 32px;
+            text-align: right;
         }
 
-    .magazineLayoutPage .groupeditemslist .win-item {
-        -ms-grid-columns: 1fr;
-        -ms-grid-rows: 1fr 50px;
-        display: -ms-grid;
-        height: 250px;
-        width: 250px;
+
+    /* Latest news */
+
+    .magazineLayoutPage .groupeditemslist .win-item.latest-news {
+        display: inline-block;
+        width: 325px;
+        height: 170px;
+        overflow: hidden;
     }
 
-        .magazineLayoutPage .groupeditemslist .win-item .item-image {
-            -ms-grid-row-span: 2;
+        .magazineLayoutPage .groupeditemslist .win-item.latest-news.item0 {
+            height: 550px;
         }
 
-            .magazineLayoutPage .groupeditemslist .win-item .item-image img {
+        .magazineLayoutPage .groupeditemslist .win-item.latest-news.item4,
+        .magazineLayoutPage .groupeditemslist .win-item.latest-news .item-image {
+            display: none;
+        }
+
+        .magazineLayoutPage .groupeditemslist .win-item.latest-news .item-overlay {
+            display: -ms-grid;
+            -ms-grid-rows: auto 1fr;
+            -ms-grid-columns: 1fr;
+        }
+
+            .magazineLayoutPage .groupeditemslist .win-item.latest-news .item-overlay .item-title {
+                -ms-grid-row: 1;
+                font-size: 24px;
+                font-weight: 400;
+                overflow: hidden;
+                text-overflow: clip;
+                white-space: nowrap;
+                width: calc(100% - 20px);
+            }
+
+            .magazineLayoutPage .groupeditemslist .win-item.latest-news .item-overlay .item-description {
+                -ms-grid-row: 2;
+                border-top: solid 1px black;
+                text-align: justify;
+                text-justify: distribute;
+                overflow: hidden;
+                text-overflow: clip;
+            }
+
+    /* Most read articles */
+
+    .magazineLayoutPage .groupeditemslist .win-item.most-read-articles {
+        display: -ms-grid;
+        -ms-grid-rows: 1fr;
+        -ms-grid-columns: 100px 1fr;
+        width: 415px;
+        height: 115px;
+        overflow: hidden;
+    }
+
+        .magazineLayoutPage .groupeditemslist .win-item.most-read-articles .item-image {
+            -ms-grid-column: 1;
+            -ms-grid-row-align: center;
+            -ms-grid-column-align: center;
+            width: calc(100% - 20px);
+            height: calc(100% - 20px);
+            margin: 20px;
+        }
+
+            .magazineLayoutPage .groupeditemslist .win-item.most-read-articles .item-image img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+            }
+
+        .magazineLayoutPage .groupeditemslist .win-item.most-read-articles .item-overlay {
+            -ms-grid-column: 2;
+            width: 100%;
+            display: -ms-grid;
+            -ms-grid-rows: auto 1fr;
+            -ms-grid-columns: 1fr;
+        }
+
+            .magazineLayoutPage .groupeditemslist .win-item.most-read-articles .item-overlay .item-title {
+                -ms-grid-row: 1;
+                font-size: 24px;
+                font-weight: 400;
+                overflow: hidden;
+                text-overflow: clip;
+                white-space: nowrap;
+            }
+
+            .magazineLayoutPage .groupeditemslist .win-item.most-read-articles .item-overlay .item-description {
+                -ms-grid-row: 2;
+                text-align: justify;
+                text-justify: distribute;
+                overflow: hidden;
+                text-overflow: clip;
+            }
+
+    /* Recent activity */
+
+    .magazineLayoutPage .groupeditemslist .win-item.recent-activity {
+        display: -ms-grid;
+        -ms-grid-rows: 1fr;
+        -ms-grid-columns: 100px 1fr;
+        width: 415px;
+        height: 115px;
+        overflow: hidden;
+        background-color: #183A68;
+        color: white;
+    }
+
+        .magazineLayoutPage .groupeditemslist .win-item.recent-activity .item-image {
+            -ms-grid-column: 1;
+            -ms-grid-row-align: center;
+            -ms-grid-column-align: center;
+            width: 80px;
+            height: 80px;
+        }
+
+            .magazineLayoutPage .groupeditemslist .win-item.recent-activity .item-image img {
                 width: 100%;
                 height: 100%;
             }
 
-        .magazineLayoutPage .groupeditemslist .win-item .item-overlay {
-            -ms-grid-row: 2;
-            -ms-grid-rows: auto 1fr;
-            display: -ms-grid;
-            padding: 2px 15px 2px 15px;
-        }
-
-            .magazineLayoutPage .groupeditemslist .win-item .item-overlay .item-title {
-                -ms-grid-row: 1;
-                overflow: hidden;
-                width: 100%;
-                height: 30px;
-                font-size: 23px;
-                font-weight: 400;
-            }
-
-            .magazineLayoutPage .groupeditemslist .win-item .item-overlay .item-description {
-                display: none;
-                /* just in case you want to display it, I'll leave this values intact */
-                -ms-grid-row: 2;
-                width: 100%;
-                overflow: hidden;
-                font-size: 9pt;
-            }
-
-@media screen and (-ms-view-state: fullscreen-landscape), screen and (-ms-view-state: fullscreen-portrait), screen and (-ms-view-state: filled) {
-    .magazineLayoutPage .groupeditemslist .win-item .item-overlay {
-        background: rgba(0,0,0,0.65);
-    }
-
-        .magazineLayoutPage .groupeditemslist .win-item .item-overlay .item-title {
-            color: rgba(255,255,255,0.87);
-        }
-
-        .magazineLayoutPage .groupeditemslist .win-item .item-overlay .item-description {
-            color: rgba(255,255,255,0.6);
-        }
-}
-
-@media screen and (-ms-view-state: snapped) {
-
-    .magazineLayoutPage .groupeditemslist .win-vertical.win-viewport .win-surface {
-        margin-bottom: 30px;
-        margin-left: 6px;
-    }
-
-    .magazineLayoutPage .groupeditemslist .win-vertical.win-viewport .win-container {
-        margin-right: 42px;
-        margin-bottom: 15px;
-        padding: 7px;
-    }
-
-    .magazineLayoutPage .groupeditemslist .win-item {
-        -ms-grid-columns: 60px 1fr;
-        -ms-grid-rows: 1fr;
-        display: -ms-grid;
-        height: 60px;
-        width: 272px;
-    }
-
-        .magazineLayoutPage .groupeditemslist .win-item .item-image {
-            -ms-grid-column: 1;
-            -ms-grid-row-span: 1;
-            height: 60px;
-            width: 60px;
-        }
-
-        .magazineLayoutPage .groupeditemslist .win-item .item-overlay {
+        .magazineLayoutPage .groupeditemslist .win-item.recent-activity .item-overlay {
             -ms-grid-column: 2;
-            -ms-grid-row: 1;
-            -ms-grid-row-align: stretch;
-            background: transparent;
-            display: inline-block;
-            margin-left: 10px;
-            padding: 0;
+            width: 100%;
+            display: -ms-grid;
+            -ms-grid-rows: 1fr;
+            -ms-grid-columns: 1fr;
         }
 
-            .magazineLayoutPage .groupeditemslist .win-item .item-overlay .item-title {
-                margin-top: 4px;
-                max-height: 40px;
-                width: 202px;
+            .magazineLayoutPage .groupeditemslist .win-item.recent-activity .item-overlay .item-title {
+                width: 180px;
+                position: relative;
+                top: 15px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: clip;
             }
 
-            .magazineLayoutPage .groupeditemslist .win-item .item-overlay .item-description {
-                opacity: 0.6;
-                width: 202px;
+            .magazineLayoutPage .groupeditemslist .win-item.recent-activity .item-overlay .item-description {
+                -ms-grid-row-align: end;
+                -ms-grid-column-align: end;
+                width: 165px;
+                margin: 0 5px 5px 0;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: clip;
             }
-}
 
-@media screen and (-ms-view-state: fullscreen-portrait) {
-    .magazineLayoutPage .groupeditemslist .win-horizontal.win-viewport .win-surface {
-        margin-left: 25px;
+    /* The week in photos */
+
+    .magazineLayoutPage .groupeditemslist .win-item.the-week-in-photos {
+        display: -ms-grid;
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        width: 250px;
+        height: 250px;
     }
-}
+
+        .magazineLayoutPage .groupeditemslist .win-item.the-week-in-photos .item-image {
+            display: inline-block;
+            width: 100%;
+            height: 250px;
+        }
+
+            .magazineLayoutPage .groupeditemslist .win-item.the-week-in-photos .item-image img {
+                width: 100%;
+                height: 100%;
+            }
+
+        .magazineLayoutPage .groupeditemslist .win-item.the-week-in-photos .item-overlay {
+            display: none;
+        }
+
+        /* Item0 */
+
+        .magazineLayoutPage .groupeditemslist .win-item.the-week-in-photos.item0 {
+            width: 510px;
+            height: 510px;
+        }
+
+            .magazineLayoutPage .groupeditemslist .win-item.the-week-in-photos.item0 .item-image {
+                width: 510px;
+                height: 510px;
+                position: relative;
+                z-index: 0;
+            }
+
+            .magazineLayoutPage .groupeditemslist .win-item.the-week-in-photos.item0 .item-overlay {
+                -ms-grid-row-align: end;
+                display: -ms-grid;
+                width: 510px;
+                height: 20%;
+                -ms-grid-rows: auto 1fr;
+                -ms-grid-columns: 1;
+                background-color: rgba(0, 0, 0, 0.30);
+                color: white;
+                position: relative;
+                z-index: 1;
+            }
+
+                .magazineLayoutPage .groupeditemslist .win-item.the-week-in-photos.item0 .item-overlay .item-title {
+                    -ms-grid-row: 1;
+                    width: 480px;
+                    margin: 5px 15px 0 15px;
+                    font-size: 24px;
+                    font-weight: 400;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: clip;
+                }
+
+                .magazineLayoutPage .groupeditemslist .win-item.the-week-in-photos.item0 .item-overlay .item-description {
+                    -ms-grid-row: 2;
+                    width: 485px;
+                    height: 100%;
+                    margin: 0 15px 0px 15px;
+                    overflow: hidden;
+                    text-overflow: clip;
+                }
+
+        /* Item1 */
+        .magazineLayoutPage .groupeditemslist .win-item.the-week-in-photos.item1 {
+            width: 515px;
+        }

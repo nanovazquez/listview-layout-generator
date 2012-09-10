@@ -18,14 +18,14 @@
 
     <!-- These templates are used to display each item in the ListView declared below. -->
     <div class="headerTemplate" data-win-control="WinJS.Binding.Template">
-        <p class="group-title win-type-x-large" data-win-bind="textContent: title; groupKey: key"></p>
+        <p class="group-title win-type-x-large" data-win-bind="innerText: description; groupKey: key"></p>
     </div>
     <div class="itemTemplate" data-win-control="WinJS.Binding.Template">
         <div class="item-image">
             <img data-win-bind="src: imageUrl;" />
         </div>
         <div class="item-overlay">
-            <div class="item-title" data-win-bind="innerText: title"></div>
+            <div class="item-title" data-win-bind="innerText: subtitle"></div>
             <div class="item-description" data-win-bind="innerText: description"></div>
         </div>
     </div>

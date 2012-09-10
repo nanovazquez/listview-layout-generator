@@ -15,8 +15,8 @@
         // populates the page elements with the app's data.
         ready: function (element, options) {
 
-            // hide 'Home' appbar command
-            document.querySelector('#appbar').winControl.hideCommands(['cmdHome'], true);
+            // display only cmdListViewSettings and cmdSampleLayout command
+            document.querySelector('#appbar').winControl.showOnlyCommands(['cmdListViewSettings', 'cmdSampleLayout'], true);
 
             var listView = element.querySelector('.groupeditemslist').winControl;
             listView.groupHeaderTemplate = element.querySelector('.headerTemplate');
