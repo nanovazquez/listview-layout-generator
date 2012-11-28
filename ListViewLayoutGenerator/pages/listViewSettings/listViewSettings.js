@@ -31,7 +31,7 @@
                 itemTemplate.render(item.data, itemContainer);
 
                 // attach the 'deleteItem' event properly
-                itemContainer.querySelector('#deleteStyle').addEventListener('click', item.data.deleteItem);
+                itemContainer.querySelector('#deleteItem').addEventListener('click', deleteItem);
 
                 return { element: itemContainer };
             });
@@ -86,6 +86,12 @@
                 ItemStylesRepository.addItem(itemToAdd);
             }
         }
+    }
+
+    function deleteItem(e) {
+
+        var itemKey = e.currentTarget.itemKey;
+        ItemStylesRepository.deleteItem(itemKey);
     }
 
     WinJS.Namespace.define("ListViewSettings", {

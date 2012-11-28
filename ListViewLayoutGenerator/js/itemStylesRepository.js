@@ -1,22 +1,26 @@
 ﻿(function () {
     "use strict";
 
+    var Item = WinJS.Class.define(function(key, cssClass, group, width, height){
+        this.key = key;
+        this.cssClass = cssClass;
+        this.group = group;
+        this.width = width;
+        this.height = height;
+    });
+
     // The items contains the following information
     // { id , itemClass , itemWidth , itemHeight, deleteItem } 
     var items = new WinJS.Binding.List();
 
     function addItem(itemToInsert) {
         var currentKey = items._currentKey;
-        var newItem = {
-            itemClass: itemToInsert.itemClass,
-            itemGroup: itemToInsert.itemGroup,
-            itemWidth: itemToInsert.itemWidth,
-            itemHeight: itemToInsert.itemHeight,
-            deleteItem: function () {
-                deleteItem((currentKey + 1).toString());
-            }
-        }
-
+        var newItem = new Item((currentKey + 1).toString(),
+                               itemToInsert.itemClass,
+                               itemToInsert.itemGroup,
+                               itemToInsert.itemWidth,
+                               itemToInsert.itemHeight);
+        
         return items.dataSource.insertAtEnd(null, newItem);
     }
 
@@ -30,10 +34,10 @@
         // loop through the styles. The most specific has priority
         var starStyledUsed = false;
         items.forEach(function (item, index) {
-            if ((item.itemClass.toLowerCase() == ('item' + itemIndex) || item.itemClass === '*')
-                && (item.itemGroup.toLowerCase() == itemGroup.toLowerCase() || item.itemGroup === '*')) {
+            if ((item.cssClass.toLowerCase() == ('item' + itemIndex) || item.cssClass === '*')
+                && (item.group.toLowerCase() == itemGroup.toLowerCase() || item.cssClass === '*')) {
 
-                var isNotStarStyle = (item.itemClass != '*' || item.itemGroup != '*');
+                var isNotStarStyle = (item.cssClass != '*' || item.group != '*');
                 if (!starStyledUsed || starStyledUsed && isNotStarStyle) {
                     itemToReturn.width = item.itemWidth + 'px';
                     itemToReturn.height = item.itemHeight + 'px';
@@ -46,12 +50,10 @@
         return itemToReturn;
     }
 
-    // add a sample item just to demonstrate how to do it
-    addItem({ itemClass: 'Item0', itemGroup: '*', itemWidth: 250, itemHeight: 250 });
-
     WinJS.Namespace.define("ItemStylesRepository", {
         dataSource: items.dataSource,
         addItem: addItem,
+        deleteItem: deleteItem,
         getItemStyles: getItemStyles,
     });
 })();

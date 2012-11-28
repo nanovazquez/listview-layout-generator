@@ -78,8 +78,10 @@
                 
                 // add width and height values
                 var itemStyle = ItemStylesRepository.getItemStyles(itemGroup, itemIndex);
-                itemContainer.style.width = itemStyle.width;
-                itemContainer.style.height = itemStyle.height;
+                if (itemStyle) {
+                    itemContainer.style.width = itemStyle.width;
+                    itemContainer.style.height = itemStyle.height;
+                }
 
                 // Render template in container
                 var itemTemplate = document.querySelector('.itemTemplate').winControl;
