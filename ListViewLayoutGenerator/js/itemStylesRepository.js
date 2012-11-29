@@ -35,12 +35,12 @@
         var starStyledUsed = false;
         items.forEach(function (item, index) {
             if ((item.cssClass.toLowerCase() == ('item' + itemIndex) || item.cssClass === '*')
-                && (item.group.toLowerCase() == itemGroup.toLowerCase() || item.cssClass === '*')) {
+                && (item.group.toLowerCase() == itemGroup.toLowerCase() || item.group === '*')) {
 
                 var isNotStarStyle = (item.cssClass != '*' || item.group != '*');
                 if (!starStyledUsed || starStyledUsed && isNotStarStyle) {
-                    itemToReturn.width = item.itemWidth + 'px';
-                    itemToReturn.height = item.itemHeight + 'px';
+                    itemToReturn.width = item.width + 'px';
+                    itemToReturn.height = item.height + 'px';
                 }
 
                 starStyledUsed = !isNotStarStyle;
